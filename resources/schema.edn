@@ -1,0 +1,120 @@
+[
+ {:db/id #db/id [:db.part/db]
+  :db/ident :id
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :userId
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :type
+  :db/valueType :db.type/keyword
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :nickname
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :password
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :status
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :username
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :uniqueId
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id [:db.part/db]
+  :db/ident :messageThread
+  :db/valueType :db.type/keyword
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+ 
+  {:db/id #db/id [:db.part/db]
+  :db/ident :title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+  
+  {:db/id #db/id [:db.part/db]
+  :db/ident :userIds
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/many
+  :db/index true
+  :db.install/_attribute :db.part/db}
+   
+  {:db/id #db/id [:db.part/db]
+  :db/ident :originIds
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/many
+  :db/index true
+  :db.install/_attribute :db.part/db}  
+  
+  {:db/id #db/id [:db.part/db]
+  :db/ident :message
+  :db/valueType :db.type/keyword
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+  
+  {:db/id #db/id [:db.part/db]
+  :db/ident :content
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+  
+  {:db/id #db/id [:db.part/db]
+  :db/ident :timeStamp
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+  
+  {:db/id #db/id [:db.part/db]
+  :db/ident :threadId
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db}
+  
+ {:db/id #db/id [:db.part/db]
+  :db/ident :edited
+  :db/valueType :db.type/boolean
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db.install/_attribute :db.part/db} 
+ ]

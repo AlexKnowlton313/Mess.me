@@ -1,0 +1,322 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+ html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+.mdl-layout__content {
+  height: 100%;
+  width: 100%;
+}
+
+.alignItemsStart {
+  align-items: flex-start; 
+  align-content:flex-start;
+}
+
+.text-white {color: white;}
+
+.checkbox {font-size: 24px;}
+
+.width100 {width: 100%;}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+} 
+
+.noBorder {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+.fullWidth {
+  width: auto;
+  padding: 8px;
+}
+
+.mdl-grid {
+  padding: 0px;
+}
+
+.messagesGrid .mdl-cell {
+  height: calc(100% - 104px);
+  background-color: white;
+}
+
+.messagesCardTitle {
+  font-size: 18px;
+  text-align: center;
+  padding: .6em;
+  position: relative;
+  background-color: 42a5f5;
+  color: white;
+}
+
+.conversationsChatList {
+  margin: 0;
+}
+
+.conversationsChatList li 
+.mdl-list__item-sub-title {
+  font-size: 12px !important;
+  padding-left: 10px !important;
+}
+
+.conversationsChatList li {    
+  margin: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 25px;
+  border-radius: 0px 5px 5px 0px;
+  min-height: 35px;
+  max-height: 35px;
+  font-size: 14px;
+  width: calc(100% - 3vh);
+}
+
+.conversationsChatList li div {
+  width: 100%;
+}    
+
+.conversationsChatList li:hover{    
+  background-color: #eee; 
+}
+
+.conversationsChatList .mdl-list__item
+.mdl-list__item-primary-content span{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: list-item;
+  height: 2.2vh;
+}
+
+.selected, .selected:hover{
+  font-style: italic;
+  background-color: 42a5f5 !important;
+}
+
+.conversationsMessagesSentMessage {
+  background-color: #42a5f5;
+  border-radius: 25px;
+  padding: 4px 15px 4px 15px;
+  display: table;
+  margin: 0px 10px 6px auto;
+  color: white;
+  max-width: 55%;
+}
+
+.conversationsMessagesRecievedMessage {
+  border-radius: 25px;
+  padding: 4px 15px 4px 15px;
+  display: table;
+  margin: 0px auto 6px 10px;
+  color: black;
+  background-color: #e0e0e0;
+  max-width: 55%;
+}
+
+.userNameLabel {
+  padding: 0px 8px;
+}
+
+.noMessages {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  color: #bdbdbd;
+  font-size: 22px;
+  line-height: 1.2em;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.messagesCardBody {
+  overflow: scroll;
+  height: calc(100% - 80px);
+  position: relative;
+  bottom: 0;
+}
+
+.messagesCardBody::-webkit-scrollbar { 
+  display: none; 
+}
+
+.messagesList {
+  margin: 0;
+  display: block;
+  height: 97.5%;
+  overflow: scroll;
+}
+
+.messagesList::-webkit-scrollbar { 
+  width: 8px; 
+}
+
+.messagesList::-webkit-scrollbar:horizontal { 
+  display: none; 
+}
+
+.messagesList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.messagesList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.sendMessagesContainer {
+  height: 40px;
+  border-top-width: 1px;
+  border-top-color: #eee;
+  border-top-style: solid;
+  position: relative;
+}
+
+input#messageInput:focus {
+  outline: none;
+}
+
+.messageInput {
+  font-size: 16px;
+  max-width: 85%;
+  border: none;
+  width: 98%;
+  margin: 1.2% 1.2%;
+}
+
+.sendMessageButton {
+  float: right;
+  color: #42a5f5;
+  margin-top: .25%;
+  padding: 0;
+}
+
+input#editThreadTitleInput:focus {
+  outline: none;
+}
+
+.titleModalInput {
+  font-size: 18px;
+  width: 100%;
+  border: none;
+}
+
+.threadSearchInput {
+  font-size: 14px;
+  max-width: 100%;
+  border: none;
+  width: 98%;
+  margin: 2% 2%;
+}
+
+input#threadSearchInput:focus {
+  outline: none;
+}
+
+input#titleModalInput:focus {
+  outline: none;
+}
+
+.editThreadTitleInput {
+  max-width: 100%;
+  font-size: 13px;
+  border: none;
+}
+
+.threadSearch {
+  height: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.messagesAddIcon {
+  position: absolute;
+  margin-top: -.3em;
+  left: 1%;
+}
+
+.threadSettingsIcon {
+  display: block;
+  padding: 0px 0px 0px 0px;
+  margin: -26px 0px -6px auto;
+}
+
+.threadDeleteButton {
+ position: absolute;
+ right: 5.5%;
+ color: red;
+ margin-top: -1.9em;
+}
+
+.newThreadModal {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%, -40%);
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  color: black;
+  margin: auto;
+  border-width: initial;
+  border-color: initial;
+  padding: 1em;
+  background: white;
+  z-index: 1;
+}
+
+.settingsModal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: -webkit-fit-content;
+  background: white;
+  z-index: 1;
+}
+
+.settingsModal .mdl-dialog__content {
+  padding: 0;
+}
+
+.settingsModalTitle {
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.settingsModalOption {
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.settingsModalOption:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.changeUserModel {
+  position: absolute;
+  right: 16px;
+  width: -webkit-fit-content;
+  background: white;
+  z-index: 1;
+}
+
+.changeUserModel .mdl-dialog__content {
+  padding: 0;
+}
