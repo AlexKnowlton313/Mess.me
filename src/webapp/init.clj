@@ -22,5 +22,14 @@
   (swap! cache assoc :user4 (:webapp.user/id (user/registerUser "Brian" "example4@gmail.com" "foo")))
   
   ;create user 5
-  (swap! cache assoc :user5 (:webapp.user/id (user/registerUser "CJ" "example5@gmail.com" "foo"))))
+  (swap! cache assoc :user5 (:webapp.user/id (user/registerUser "CJ" "example5@gmail.com" "foo")))
+  
+  ;create user 6
+  (swap! cache assoc :user5 (:webapp.user/id (user/registerUser "Tommy" "example6@gmail.com" "foo")))
+  
+  ;create user 7
+  (swap! cache assoc :user5 (:webapp.user/id (user/registerUser "Adam" "example7@gmail.com" "foo")))
+  
+  ;create user 8
+  (swap! cache assoc :user5 (:webapp.user/id (user/registerUser "Scott" "example8@gmail.com" "foo"))))
 

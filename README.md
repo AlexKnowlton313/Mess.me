@@ -4,6 +4,8 @@
 
 A simple websocketed messenger application!
 
+![Tel.me Main](resources/public/img/telme.jpg "Main")
+
 ## Getting started
 
 ### Install leiningen

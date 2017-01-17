@@ -121,6 +121,7 @@
                                                                                        :threadId (:id thread)
                                                                                        :targetUsers (zipmap targetIds targetNames)})
                     (swap! state/conversations-state assoc :is-editing false)
+                    (swap! state/conversations-state assoc :clearInput? true)
                     (getMessages (:id thread) 0 true))
         :class (str (if (= (:threadId (:current-thread-state @state/conversations-state)) (:id thread)) "selected ")
                     (if (not (empty? title)) "mdl-list__item--two-line"))}
@@ -148,7 +149,7 @@
                                      "conversationsMessagesSentMessage")}
                            (:content message)]])})))
 
-(defn textInput [{:keys [title on-save on-stop ret-val]}]
+(defn textInput [{:keys [title on-save on-stop ret-val isMessage?]}]
   "A new 'widget' since I didn't want the material design input.
   Stop called on 'esc' key (and after save)
   Save called on 'Enter' key
@@ -162,19 +163,20 @@
                 (stop))
         retVal #(let [v (-> @val str clojure.string/trim)]
                   (if ret-val (ret-val v)))]
-    (fn [{:keys [id class placeholder disabled button?]}]
+    (fn [{:keys [id class placeholder disabled clear?]}]
+      (if clear? (stop))
       [:div
        [:input {:type "text" :value @val
                 :id id :class class :placeholder placeholder
                 :disabled disabled
-                :on-blur nil
+                :on-focus #(swap! state/conversations-state assoc :clearInput? false)
                 :on-change #(do (reset! val (-> % .-target .-value))
                               (retVal))
                 :on-key-down #(case (.-which %)
                                 13 (save)
                                 27 (stop)
                                 nil)}]
-       (if button?
+       (if isMessage?
          [:button.mdl-button.mdl-js-button.sendMessageButton
           {:on-click #(let [v (-> @val str clojure.string/trim)]
                         (if-not (empty? v)
@@ -233,10 +235,13 @@
        [:div.mdl-dialog__actions
         [:button.mdl-button.mdl-button--raised.mdl-js-button.mdl-js-ripple-effect
          {:disabled (empty? (filter true? (vals @formState)))
-          :on-click #(do (createThread! @formState) (handler-fn (swap! state/conversations-state assoc :dialog-open false) nil))}
+          :on-click #(do (createThread! @formState) 
+                         (handler-fn (swap! state/conversations-state assoc :dialog-open false) nil)
+                         (swap! formState assoc :title ""))}
          "Create"]
         [:button.mdl-button.mdl-js-button.warn.mdl-js-ripple-effect
-         {:on-click #(handler-fn (swap! state/conversations-state assoc :dialog-open false) nil)}
+         {:on-click #(do (handler-fn (swap! state/conversations-state assoc :dialog-open false) nil)
+                         (swap! formState assoc :title ""))}
          "Cancel"]]])))
 
 (defn settingsModal [settingsModalState]
@@ -286,7 +291,7 @@
               [textInput {:id "threadSearchInput"
                           :class "threadSearchInput"
                           :placeholder "Search"
-                          :ret-val #(swap! state/conversations-state assoc :filtered-threads(searchThreads %))
+                          :ret-val #(swap! state/conversations-state assoc :filtered-threads (searchThreads %))
                           :on-save nil}]]
              [:ul.demo-list-two.mdl-list.conversationsChatList
               (map (fn [thread] ^{:key (str "thread-item-" (:id thread))} [threadItem thread])
@@ -325,7 +330,8 @@
                        :placeholder "Type a message"
                        :disabled (empty? (:current-thread-state @state/conversations-state))
                        :on-save createMessage!
-                       :button? true}]]]]]])))
+                       :isMessage? true
+                       :clear? (:clearInput? @state/conversations-state)}]]]]]])))
 
 (defn init []
   "init function called on login. Gets all threads for a user."
