@@ -15,8 +15,9 @@ Install [leiningen](http://leiningen.org) by following the instructions on this 
 
 Run `lein do clean, figwheel`. In another terminal window run `lein run`.
 
+## Contributors
 
+[David Golden](https://github.com/dcgolden)
+[Alex Knowlton](https://github.com/AlexKnowlton313)
 
-
-
-
+And a special thanks to our bosses, Mel and Mort, for allowing us to port our code to a stand-alone app.
