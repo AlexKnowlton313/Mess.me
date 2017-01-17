@@ -4,7 +4,7 @@
 
 A simple websocketed messenger application!
 
-![Tel.me Main](resources/public/img/telme.jpg "Main")
+![Tel.me Main](resources/public/img/Telme.jpg "Main")
 
 ## Getting started
 
