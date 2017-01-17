@@ -56,7 +56,7 @@
    [:main.mdl-layout__content.mdl-color--grey-100.width100
     [:div.mdl-card__title.alignItemsStart.mdl-card--border.mdl-card--expand..mdl-color--blue-400
      [:h3.mdl-card__title-text.text-white
-      "A Simple Messenger Program"]
+      "Tel.me"]
      [:div.mdl-layout-spacer]
      [:button.mdl-button.mdl-js-button.mdl-js-ripple-effect.text-white 
       {:on-click #(handler-fn (swap! state/main-state assoc :dialog-open true) nil)}

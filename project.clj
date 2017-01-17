@@ -1,4 +1,4 @@
-(defproject Mess.me "0.1.0"
+(defproject Tel.me "0.1.0"
   :description "a small little messenger app ripped from a summer project"
   :url ""
   :dependencies [[org.clojure/clojure "1.8.0"]
