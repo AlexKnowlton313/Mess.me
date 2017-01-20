@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple websocketed messenger application!
+A simple websocket messenger application! Built using Clojure/script.
 
 ![Tel.me Main](resources/public/img/Telme.jpg "Main")
 
